@@ -1,0 +1,62 @@
+
+    // --1---FETCH----
+    // const fetchProducts = () => {
+    //     setIsLoading(true);
+
+    //     fetch('https://dummyjson.com/products')
+    //         .then((res) => res.json())
+    //         .then((data) => setProducts(data.products)).catch((error) => {
+    //         console.log(" Error while product request:", error);
+    //     }).finally(() => {
+    //         setIsLoading(false);
+    //     })
+    // };
+
+
+
+    // -2---AXIOS----
+
+
+
+    const fetchProducts = () => {
+        setIsLoading(true);
+
+      productService
+           .findAll()
+            .then((data) => setProducts(data.products))
+            .catch((error:unknown) => {
+                getErrorMessage(error)
+
+
+        })
+            .finally(() => {
+            setIsLoading(false);
+        })
+    };
+
+
+
+// 3-----AWAIT AXIOS---------
+
+    // function App() {
+    //     const [products, setProducts] = useState<IProduct[]>([]);
+    //     const [isLoading, setIsLoading] = useState(false);
+    //
+    //     console.log("products", products);
+    //
+    //     const fetchProducts = async () => {
+    //         setIsLoading(true);
+    //
+    //         try {
+    //             const response = await axios.get('https://dummyjson.com/products');
+    //             setProducts(response.data.products);
+    //         } catch (error) {
+    //             console.error("Error while product request:", error);
+    //         } finally {
+    //             setIsLoading(false);
+    //         }
+    //     };
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
