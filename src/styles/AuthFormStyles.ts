@@ -1,12 +1,11 @@
-// authFormStyles.ts
-// import React from 'react'; // Эта строка была удалена
+
 
 export const formContainerStyle: React.CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
-    gap: '15px', // Увеличиваем зазор между элементами для лучшего вида
-    maxWidth: '400px', // Увеличиваем максимальную ширину
-    margin: '40px auto', // Добавляем отступы сверху/снизу
+    gap: '15px', 
+    maxWidth: '400px', 
+    margin: '40px auto', 
     padding: '30px',
     border: '1px solid #ddd',
     borderRadius: '10px',
@@ -24,11 +23,11 @@ export const labelStyle: React.CSSProperties = {
 export const inputStyle: React.CSSProperties = {
     width: '100%',
     padding: '10px 12px',
-    margin: '0', // Убираем внешний отступ, если он был
+    margin: '0', 
     border: '1px solid #ccc',
     borderRadius: '6px',
     fontSize: '16px',
-    boxSizing: 'border-box', // Важно для правильного расчета ширины с padding
+    boxSizing: 'border-box', 
 };
 
 export const buttonStyle: React.CSSProperties = {
